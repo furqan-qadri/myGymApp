@@ -167,7 +167,7 @@ p.chat {
     <div class="title">
       Gym Trainee Apps
     </div>
-<div class="wel">welcome, </div>
+<div class="wel">welcome,<?php echo $displayName; ?> </div>
 <div class="a">
   <a href="/home">Dashboard</a>
 </div>
