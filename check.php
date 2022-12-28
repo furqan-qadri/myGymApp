@@ -1,5 +1,6 @@
 <?php      
-    include('Login2.php');  
+   session_start();
+   include('Login2.php');  
     $ownerEmail = $_POST['Email'];  
     $ownerPassword = $_POST['Password'];  
       
@@ -13,11 +14,12 @@
         $result = mysqli_query($con, $sql);  
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
         $count = mysqli_num_rows($result);  
-          
         if($count == 1){  
-            header("Location: http://localhost/Login%20page/dashboard.html");  
+            $_SESSION["ownerId"] = $row['ownerId'];
+            $_SESSION["ownerName"] = $row['ownerName'];
+            header("Location: dashboard.php");  
         }  
         else{  
             echo "<h1> Invalid username or password.</h1>";  
-        }     
-?>  
+        }    
+        ?>
