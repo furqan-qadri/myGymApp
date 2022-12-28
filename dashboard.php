@@ -1,5 +1,9 @@
+
 <!DOCTYPE html>
 <html>
+<?php 
+session_start (); 
+?>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
@@ -160,6 +164,7 @@ p.chat {
 </style>
 </head>
 <body>
+
   <div class="container">]
     <div class="im">
       <img src="gym.PNG" alt="HTML5 Icon" style="width:110px;height:110px;">
@@ -167,7 +172,9 @@ p.chat {
     <div class="title">
       Gym Trainee Apps
     </div>
-<div class="wel">welcome,<?php echo $displayName; ?> </div>
+<div class="wel">
+<p>Welcome <?php echo $_SESSION["ownerName"]; ?>.</p>
+</div>
 <div class="a">
   <a href="/home">Dashboard</a>
 </div>
