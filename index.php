@@ -54,9 +54,11 @@
                                 </tr>
                             </thead>
                             <tbody>
+
+
                                 <?php 
 
-                                    $query = "SELECT * FROM trainers";
+                                    $query = "SELECT * FROM trainer";
                                     $query_run = mysqli_query($con, $query);
 
                                     if(mysqli_num_rows($query_run) > 0)
@@ -65,32 +67,33 @@
                                         {
                                             ?>
                                             <tr>
-                                                <td><?= $student['id']; ?></td>
-                                                <td><?= $student['name']; ?></td>
-                                                <td><?= $student['email']; ?></td>
-                                                <td><?= $student['phone']; ?></td>
+                                                <td><?= $student['trainerId']; ?></td>
+                                                <td><?= $student['trainerName']; ?></td>
+                                                <td><?= $student['trainerEmail']; ?></td>
+                                                <td><?= $student['trainerPhone']; ?></td>
 
 
-                                                <td><?= $student['birthday']; ?></td>
+                                                <td><?= $student['trainerDOB']; ?></td>
 
-                                                <td><?= $student['ic']; ?></td>
+                                                <td><?= $student['trainerIC']; ?></td>
 
-                                                <td><?= $student['gender']; ?></td>
+                                                <td><?= $student['trainerGender']; ?></td>
 
-                                                <td><?= $student['plan']; ?></td>
+                                                <td><?= $student['planId']; ?></td>
 
                                                 <!-- <td><?= $student['status']; ?></td> -->
 
 
 
                                                 <td>
-                                                    <a href="trainer-view.php?id=<?= $student['id']; ?>" class="btn btn-info btn-sm">View</a>
-                                                    <a href="trainer-edit.php?id=<?= $student['id']; ?>" class="btn btn-success btn-sm">Edit</a>
+                                                    <a href="trainer-view.php?id=<?= $student['trainerId']; ?>" class="btn btn-info btn-sm">View</a>
+                                                    <a href="trainer-edit.php?id=<?= $student['trainerId']; ?>" class="btn btn-success btn-sm">Edit</a>
                                                     <form action="code.php" method="POST" class="d-inline">
-                                                        <button type="submit" name="delete_student" value="<?=$student['id'];?>" class="btn btn-danger btn-sm">Delete</button>
+                                                        <button type="submit" name="delete_student" value="<?=$student['trainerId'];?>" class="btn btn-danger btn-sm">Delete</button>
                                                     </form>
                                                 </td>
                                             </tr>
+
                                             <?php
                                         }
                                     }
